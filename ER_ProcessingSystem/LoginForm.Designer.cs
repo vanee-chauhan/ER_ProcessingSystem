@@ -81,7 +81,7 @@
             // 
             // btn_login
             // 
-            btn_login.Location = new Point(330, 353);
+            btn_login.Location = new Point(293, 333);
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(94, 29);
             btn_login.TabIndex = 5;
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(606, 450);
+            ClientSize = new Size(693, 484);
             Controls.Add(btn_login);
             Controls.Add(tb_pwd);
             Controls.Add(tb_nm);
