@@ -40,65 +40,72 @@
             // 
             lbl_login.AutoSize = true;
             lbl_login.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_login.Location = new Point(309, 46);
+            lbl_login.Location = new Point(392, 102);
+            lbl_login.Margin = new Padding(4, 0, 4, 0);
             lbl_login.Name = "lbl_login";
-            lbl_login.Size = new Size(95, 41);
+            lbl_login.Size = new Size(112, 48);
             lbl_login.TabIndex = 0;
             lbl_login.Text = "Login";
             // 
             // lbl_nm
             // 
             lbl_nm.AutoSize = true;
-            lbl_nm.Location = new Point(122, 141);
+            lbl_nm.Location = new Point(183, 176);
+            lbl_nm.Margin = new Padding(4, 0, 4, 0);
             lbl_nm.Name = "lbl_nm";
-            lbl_nm.Size = new Size(82, 20);
+            lbl_nm.Size = new Size(100, 25);
             lbl_nm.TabIndex = 1;
             lbl_nm.Text = "Username :";
             // 
             // lbl_pwd
             // 
             lbl_pwd.AutoSize = true;
-            lbl_pwd.Location = new Point(122, 238);
+            lbl_pwd.Location = new Point(183, 249);
+            lbl_pwd.Margin = new Padding(4, 0, 4, 0);
             lbl_pwd.Name = "lbl_pwd";
-            lbl_pwd.Size = new Size(77, 20);
+            lbl_pwd.Size = new Size(96, 25);
             lbl_pwd.TabIndex = 2;
             lbl_pwd.Text = "Password :";
             // 
             // tb_nm
             // 
-            tb_nm.Location = new Point(233, 141);
+            tb_nm.Location = new Point(291, 176);
+            tb_nm.Margin = new Padding(4);
             tb_nm.Name = "tb_nm";
-            tb_nm.Size = new Size(125, 27);
+            tb_nm.Size = new Size(326, 31);
             tb_nm.TabIndex = 3;
             // 
             // tb_pwd
             // 
-            tb_pwd.Location = new Point(233, 235);
+            tb_pwd.Location = new Point(291, 243);
+            tb_pwd.Margin = new Padding(4);
             tb_pwd.Name = "tb_pwd";
             tb_pwd.PasswordChar = '*';
-            tb_pwd.Size = new Size(125, 27);
+            tb_pwd.Size = new Size(326, 31);
             tb_pwd.TabIndex = 4;
             // 
             // btn_login
             // 
-            btn_login.Location = new Point(293, 333);
+            btn_login.Location = new Point(386, 311);
+            btn_login.Margin = new Padding(4);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(94, 29);
+            btn_login.Size = new Size(118, 36);
             btn_login.TabIndex = 5;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(693, 484);
+            ClientSize = new Size(893, 459);
             Controls.Add(btn_login);
             Controls.Add(tb_pwd);
             Controls.Add(tb_nm);
             Controls.Add(lbl_pwd);
             Controls.Add(lbl_nm);
             Controls.Add(lbl_login);
+            Margin = new Padding(4);
             Name = "LoginForm";
             Text = "Form2";
             ResumeLayout(false);
