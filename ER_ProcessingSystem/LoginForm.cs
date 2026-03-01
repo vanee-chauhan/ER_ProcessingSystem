@@ -64,21 +64,21 @@ namespace ER_ProcessingSystem
                         {
                             string role = result.ToString();
 
-    MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Hide();
 
                             if (role == "STUDENT")
                             {
-        StudentDashboard studentForm = new StudentDashboard();
-        studentForm.Show();
-    }
+                                StudentDashboard studentForm = new StudentDashboard();
+                                studentForm.Show();
+                            }
                             else if (role == "ADMIN")
                             {
-        AdminDashboard adminForm = new AdminDashboard();
-        adminForm.Show();
-    }
-    }
+                                AdminDashboard adminForm = new AdminDashboard();
+                                adminForm.Show();
+                            }
+                        }
                         else
                         {
                             MessageBox.Show("Invalid Username or Password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -92,7 +92,12 @@ namespace ER_ProcessingSystem
             }
         }
 
-
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            register reg=new register();
+            reg.Show();
+            this.Hide();
+        }
     }
 }
 
