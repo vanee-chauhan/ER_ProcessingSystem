@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             gb_subEntry = new GroupBox();
-            lbl_sub_nm = new Label();
-            lbl_Course = new Label();
-            lbl_sem = new Label();
-            lbl_asgnTeacher = new Label();
-            tb_subNm = new TextBox();
-            cb_course = new ComboBox();
-            cb_sem = new ComboBox();
             cb_asgTeacher = new ComboBox();
+            cb_sem = new ComboBox();
+            cb_course = new ComboBox();
+            tb_subNm = new TextBox();
+            lbl_asgnTeacher = new Label();
+            lbl_sem = new Label();
+            lbl_Course = new Label();
+            lbl_sub_nm = new Label();
             btn_add = new Button();
             btn_delete = new Button();
             btn_update = new Button();
@@ -63,37 +63,42 @@
             gb_subEntry.TabStop = false;
             gb_subEntry.Text = "Subject Entry";
             // 
-            // lbl_sub_nm
+            // cb_asgTeacher
             // 
-            lbl_sub_nm.AutoSize = true;
-            lbl_sub_nm.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_sub_nm.Location = new Point(19, 45);
-            lbl_sub_nm.Name = "lbl_sub_nm";
-            lbl_sub_nm.Size = new Size(109, 20);
-            lbl_sub_nm.TabIndex = 0;
-            lbl_sub_nm.Text = "Subject Name :";
-            lbl_sub_nm.Click += this.lbl_sub_nm_Click;
+            cb_asgTeacher.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_asgTeacher.FormattingEnabled = true;
+            cb_asgTeacher.Items.AddRange(new object[] { "Sweta Chauhan", "Bhumika Solanki", "Rishi patel", "Akash shetty" });
+            cb_asgTeacher.Location = new Point(155, 175);
+            cb_asgTeacher.Name = "cb_asgTeacher";
+            cb_asgTeacher.Size = new Size(178, 25);
+            cb_asgTeacher.TabIndex = 7;
             // 
-            // lbl_Course
+            // cb_sem
             // 
-            lbl_Course.AutoSize = true;
-            lbl_Course.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_Course.Location = new Point(67, 83);
-            lbl_Course.Name = "lbl_Course";
-            lbl_Course.Size = new Size(61, 20);
-            lbl_Course.TabIndex = 1;
-            lbl_Course.Text = "Course :";
+            cb_sem.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_sem.FormattingEnabled = true;
+            cb_sem.Items.AddRange(new object[] { "4" });
+            cb_sem.Location = new Point(155, 128);
+            cb_sem.Name = "cb_sem";
+            cb_sem.Size = new Size(178, 25);
+            cb_sem.TabIndex = 6;
             // 
-            // lbl_sem
+            // cb_course
             // 
-            lbl_sem.AutoSize = true;
-            lbl_sem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_sem.Location = new Point(58, 135);
-            lbl_sem.Name = "lbl_sem";
-            lbl_sem.Size = new Size(77, 20);
-            lbl_sem.TabIndex = 2;
-            lbl_sem.Text = "Semester :";
-            lbl_sem.Click += this.lbl_sem_Click;
+            cb_course.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_course.FormattingEnabled = true;
+            cb_course.Items.AddRange(new object[] { "Bsc.IT" });
+            cb_course.Location = new Point(155, 83);
+            cb_course.Name = "cb_course";
+            cb_course.Size = new Size(178, 25);
+            cb_course.TabIndex = 5;
+            // 
+            // tb_subNm
+            // 
+            tb_subNm.Location = new Point(155, 38);
+            tb_subNm.Name = "tb_subNm";
+            tb_subNm.Size = new Size(178, 34);
+            tb_subNm.TabIndex = 4;
             // 
             // lbl_asgnTeacher
             // 
@@ -105,37 +110,35 @@
             lbl_asgnTeacher.TabIndex = 3;
             lbl_asgnTeacher.Text = "Assigned Teacher :";
             // 
-            // tb_subNm
+            // lbl_sem
             // 
-            tb_subNm.Location = new Point(155, 38);
-            tb_subNm.Name = "tb_subNm";
-            tb_subNm.Size = new Size(178, 34);
-            tb_subNm.TabIndex = 4;
-            tb_subNm.TextChanged += this.textBox1_TextChanged;
+            lbl_sem.AutoSize = true;
+            lbl_sem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_sem.Location = new Point(58, 135);
+            lbl_sem.Name = "lbl_sem";
+            lbl_sem.Size = new Size(77, 20);
+            lbl_sem.TabIndex = 2;
+            lbl_sem.Text = "Semester :";
             // 
-            // cb_course
+            // lbl_Course
             // 
-            cb_course.FormattingEnabled = true;
-            cb_course.Location = new Point(155, 83);
-            cb_course.Name = "cb_course";
-            cb_course.Size = new Size(178, 33);
-            cb_course.TabIndex = 5;
+            lbl_Course.AutoSize = true;
+            lbl_Course.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Course.Location = new Point(67, 83);
+            lbl_Course.Name = "lbl_Course";
+            lbl_Course.Size = new Size(61, 20);
+            lbl_Course.TabIndex = 1;
+            lbl_Course.Text = "Course :";
             // 
-            // cb_sem
+            // lbl_sub_nm
             // 
-            cb_sem.FormattingEnabled = true;
-            cb_sem.Location = new Point(155, 128);
-            cb_sem.Name = "cb_sem";
-            cb_sem.Size = new Size(178, 33);
-            cb_sem.TabIndex = 6;
-            // 
-            // cb_asgTeacher
-            // 
-            cb_asgTeacher.FormattingEnabled = true;
-            cb_asgTeacher.Location = new Point(155, 175);
-            cb_asgTeacher.Name = "cb_asgTeacher";
-            cb_asgTeacher.Size = new Size(178, 33);
-            cb_asgTeacher.TabIndex = 7;
+            lbl_sub_nm.AutoSize = true;
+            lbl_sub_nm.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_sub_nm.Location = new Point(19, 45);
+            lbl_sub_nm.Name = "lbl_sub_nm";
+            lbl_sub_nm.Size = new Size(109, 20);
+            lbl_sub_nm.TabIndex = 0;
+            lbl_sub_nm.Text = "Subject Name :";
             // 
             // btn_add
             // 
