@@ -42,7 +42,6 @@
             colInternal = new DataGridViewTextBoxColumn();
             colExternal = new DataGridViewTextBoxColumn();
             btnSaveMarks = new Button();
-            button1 = new Button();
             gb_selectclass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMarksEntry).BeginInit();
             SuspendLayout();
@@ -201,21 +200,11 @@
             btnSaveMarks.UseVisualStyleBackColor = true;
             btnSaveMarks.Click += btnSaveMarks_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(155, 594);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 3;
-            button1.Text = "Reset";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // marksEntry
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 645);
-            Controls.Add(button1);
             Controls.Add(btnSaveMarks);
             Controls.Add(dgvMarksEntry);
             Controls.Add(gb_selectclass);
@@ -246,6 +235,5 @@
         private DataGridViewTextBoxColumn colStudentName;
         private DataGridViewTextBoxColumn colInternal;
         private DataGridViewTextBoxColumn colExternal;
-        private Button button1;
     }
 }
