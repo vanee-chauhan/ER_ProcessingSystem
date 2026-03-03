@@ -35,5 +35,10 @@ namespace ER_ProcessingSystem
             LoginForm frm = new LoginForm();
             frm.Show();
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

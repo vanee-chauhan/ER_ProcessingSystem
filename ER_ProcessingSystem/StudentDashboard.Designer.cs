@@ -57,7 +57,7 @@
             // viewResultToolStripMenuItem
             // 
             viewResultToolStripMenuItem.Name = "viewResultToolStripMenuItem";
-            viewResultToolStripMenuItem.Size = new Size(224, 26);
+            viewResultToolStripMenuItem.Size = new Size(168, 26);
             viewResultToolStripMenuItem.Text = "View Result";
             viewResultToolStripMenuItem.Click += viewResultToolStripMenuItem_Click;
             // 
@@ -67,6 +67,7 @@
             accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             accountToolStripMenuItem.Size = new Size(77, 24);
             accountToolStripMenuItem.Text = "Account";
+            accountToolStripMenuItem.Click += accountToolStripMenuItem_Click;
             // 
             // logOutToolStripMenuItem
             // 
