@@ -16,5 +16,10 @@ namespace ER_ProcessingSystem
         {
             InitializeComponent();
         }
+
+        private void pnlReportCard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

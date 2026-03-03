@@ -32,6 +32,8 @@
             cmb_sem = new ComboBox();
             btnViewResult = new Button();
             pnlReportCard = new Panel();
+            txt_sNm = new TextBox();
+            lbl_sNm = new Label();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -41,8 +43,6 @@
             ext_mrks = new DataGridViewTextBoxColumn();
             ttl_marks = new DataGridViewTextBoxColumn();
             grade = new DataGridViewTextBoxColumn();
-            lbl_sNm = new Label();
-            txt_sNm = new TextBox();
             pnlReportCard.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -90,6 +90,23 @@
             pnlReportCard.Name = "pnlReportCard";
             pnlReportCard.Size = new Size(885, 468);
             pnlReportCard.TabIndex = 3;
+            pnlReportCard.Paint += pnlReportCard_Paint;
+            // 
+            // txt_sNm
+            // 
+            txt_sNm.Location = new Point(134, 88);
+            txt_sNm.Name = "txt_sNm";
+            txt_sNm.Size = new Size(145, 27);
+            txt_sNm.TabIndex = 3;
+            // 
+            // lbl_sNm
+            // 
+            lbl_sNm.AutoSize = true;
+            lbl_sNm.Location = new Point(17, 91);
+            lbl_sNm.Name = "lbl_sNm";
+            lbl_sNm.Size = new Size(111, 20);
+            lbl_sNm.TabIndex = 2;
+            lbl_sNm.Text = "Student Name :";
             // 
             // panel1
             // 
@@ -164,22 +181,6 @@
             grade.MinimumWidth = 6;
             grade.Name = "grade";
             grade.ReadOnly = true;
-            // 
-            // lbl_sNm
-            // 
-            lbl_sNm.AutoSize = true;
-            lbl_sNm.Location = new Point(17, 91);
-            lbl_sNm.Name = "lbl_sNm";
-            lbl_sNm.Size = new Size(111, 20);
-            lbl_sNm.TabIndex = 2;
-            lbl_sNm.Text = "Student Name :";
-            // 
-            // txt_sNm
-            // 
-            txt_sNm.Location = new Point(134, 88);
-            txt_sNm.Name = "txt_sNm";
-            txt_sNm.Size = new Size(145, 27);
-            txt_sNm.TabIndex = 3;
             // 
             // ViewResultForm
             // 
