@@ -140,7 +140,7 @@
             dgvResultGrid.BorderStyle = BorderStyle.None;
             dgvResultGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvResultGrid.Columns.AddRange(new DataGridViewColumn[] { sub_nm, int_mrks, ext_mrks, ttl_marks, grade });
-            dgvResultGrid.Location = new Point(20, 264);
+            dgvResultGrid.Location = new Point(17, 261);
             dgvResultGrid.Name = "dgvResultGrid";
             dgvResultGrid.ReadOnly = true;
             dgvResultGrid.RowHeadersWidth = 51;

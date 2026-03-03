@@ -16,5 +16,24 @@ namespace ER_ProcessingSystem
         {
             InitializeComponent();
         }
+
+        private void myAcademicsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewResultForm frm = new ViewResultForm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm frm = new LoginForm();
+            frm.Show();
+        }
     }
 }
