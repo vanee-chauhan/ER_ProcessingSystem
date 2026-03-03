@@ -36,8 +36,12 @@
             sub_nm = new DataGridViewTextBoxColumn();
             int_mrks = new DataGridViewTextBoxColumn();
             ext_mrks = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             pnlReportCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvResultGrid).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lbl_sem
@@ -72,6 +76,7 @@
             // pnlReportCard
             // 
             pnlReportCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlReportCard.Controls.Add(panel1);
             pnlReportCard.Controls.Add(dgvResultGrid);
             pnlReportCard.Location = new Point(41, 73);
             pnlReportCard.Name = "pnlReportCard";
@@ -113,6 +118,22 @@
             ext_mrks.Name = "ext_mrks";
             ext_mrks.ReadOnly = true;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(877, 70);
+            panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // ViewResultForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -128,6 +149,8 @@
             Text = "Result Sheet";
             pnlReportCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvResultGrid).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +165,7 @@
         private DataGridViewTextBoxColumn sub_nm;
         private DataGridViewTextBoxColumn int_mrks;
         private DataGridViewTextBoxColumn ext_mrks;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
