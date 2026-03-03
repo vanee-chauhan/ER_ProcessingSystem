@@ -41,6 +41,11 @@
             btn_delete = new Button();
             btn_update = new Button();
             dgv_sub = new DataGridView();
+            sub_id = new DataGridViewTextBoxColumn();
+            sun_nm = new DataGridViewTextBoxColumn();
+            course = new DataGridViewTextBoxColumn();
+            sem = new DataGridViewTextBoxColumn();
+            teacher_nm = new DataGridViewTextBoxColumn();
             gb_subEntry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_sub).BeginInit();
             SuspendLayout();
@@ -172,12 +177,51 @@
             // 
             // dgv_sub
             // 
+            dgv_sub.AllowUserToAddRows = false;
+            dgv_sub.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_sub.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_sub.Columns.AddRange(new DataGridViewColumn[] { sub_id, sun_nm, course, sem, teacher_nm });
             dgv_sub.Location = new Point(116, 330);
             dgv_sub.Name = "dgv_sub";
             dgv_sub.RowHeadersWidth = 51;
             dgv_sub.Size = new Size(579, 160);
             dgv_sub.TabIndex = 4;
+            // 
+            // sub_id
+            // 
+            sub_id.HeaderText = "Subject_ID";
+            sub_id.MinimumWidth = 6;
+            sub_id.Name = "sub_id";
+            sub_id.ReadOnly = true;
+            sub_id.Visible = false;
+            // 
+            // sun_nm
+            // 
+            sun_nm.HeaderText = "Subject_Name";
+            sun_nm.MinimumWidth = 6;
+            sun_nm.Name = "sun_nm";
+            sun_nm.ReadOnly = true;
+            // 
+            // course
+            // 
+            course.HeaderText = "Course";
+            course.MinimumWidth = 6;
+            course.Name = "course";
+            course.ReadOnly = true;
+            // 
+            // sem
+            // 
+            sem.HeaderText = "Semester";
+            sem.MinimumWidth = 6;
+            sem.Name = "sem";
+            sem.ReadOnly = true;
+            // 
+            // teacher_nm
+            // 
+            teacher_nm.HeaderText = "Teacher_Name";
+            teacher_nm.MinimumWidth = 6;
+            teacher_nm.Name = "teacher_nm";
+            teacher_nm.ReadOnly = true;
             // 
             // subject
             // 
@@ -212,5 +256,10 @@
         private Button btn_delete;
         private Button btn_update;
         private DataGridView dgv_sub;
+        private DataGridViewTextBoxColumn sub_id;
+        private DataGridViewTextBoxColumn sun_nm;
+        private DataGridViewTextBoxColumn course;
+        private DataGridViewTextBoxColumn sem;
+        private DataGridViewTextBoxColumn teacher_nm;
     }
 }

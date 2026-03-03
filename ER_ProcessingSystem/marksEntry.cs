@@ -16,5 +16,20 @@ namespace ER_ProcessingSystem
         {
             InitializeComponent();
         }
+
+        private void lbl_sem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gb_selectclass_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
