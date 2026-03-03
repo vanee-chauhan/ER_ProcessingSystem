@@ -32,6 +32,12 @@
             cmb_sem = new ComboBox();
             btnViewResult = new Button();
             pnlReportCard = new Panel();
+            dgvResultGrid = new DataGridView();
+            sub_nm = new DataGridViewTextBoxColumn();
+            int_mrks = new DataGridViewTextBoxColumn();
+            ext_mrks = new DataGridViewTextBoxColumn();
+            pnlReportCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).BeginInit();
             SuspendLayout();
             // 
             // lbl_sem
@@ -65,17 +71,54 @@
             // 
             // pnlReportCard
             // 
-            pnlReportCard.Location = new Point(94, 94);
+            pnlReportCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlReportCard.Controls.Add(dgvResultGrid);
+            pnlReportCard.Location = new Point(41, 73);
             pnlReportCard.Name = "pnlReportCard";
-            pnlReportCard.Size = new Size(501, 273);
+            pnlReportCard.Size = new Size(885, 468);
             pnlReportCard.TabIndex = 3;
+            // 
+            // dgvResultGrid
+            // 
+            dgvResultGrid.AllowUserToAddRows = false;
+            dgvResultGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvResultGrid.BorderStyle = BorderStyle.None;
+            dgvResultGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvResultGrid.Columns.AddRange(new DataGridViewColumn[] { sub_nm, int_mrks, ext_mrks });
+            dgvResultGrid.Location = new Point(20, 264);
+            dgvResultGrid.Name = "dgvResultGrid";
+            dgvResultGrid.ReadOnly = true;
+            dgvResultGrid.RowHeadersWidth = 51;
+            dgvResultGrid.Size = new Size(845, 188);
+            dgvResultGrid.TabIndex = 0;
+            // 
+            // sub_nm
+            // 
+            sub_nm.HeaderText = "Subject Name";
+            sub_nm.MinimumWidth = 6;
+            sub_nm.Name = "sub_nm";
+            sub_nm.ReadOnly = true;
+            // 
+            // int_mrks
+            // 
+            int_mrks.HeaderText = "Internal Marks";
+            int_mrks.MinimumWidth = 6;
+            int_mrks.Name = "int_mrks";
+            int_mrks.ReadOnly = true;
+            // 
+            // ext_mrks
+            // 
+            ext_mrks.HeaderText = "External Marks";
+            ext_mrks.MinimumWidth = 6;
+            ext_mrks.Name = "ext_mrks";
+            ext_mrks.ReadOnly = true;
             // 
             // ViewResultForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(970, 590);
             Controls.Add(pnlReportCard);
             Controls.Add(btnViewResult);
             Controls.Add(cmb_sem);
@@ -83,6 +126,8 @@
             Name = "ViewResultForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Result Sheet";
+            pnlReportCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,5 +138,9 @@
         private ComboBox cmb_sem;
         private Button btnViewResult;
         private Panel pnlReportCard;
+        private DataGridView dgvResultGrid;
+        private DataGridViewTextBoxColumn sub_nm;
+        private DataGridViewTextBoxColumn int_mrks;
+        private DataGridViewTextBoxColumn ext_mrks;
     }
 }
