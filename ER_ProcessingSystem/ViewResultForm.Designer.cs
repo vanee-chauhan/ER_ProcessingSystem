@@ -32,16 +32,22 @@
             cmb_sem = new ComboBox();
             btnViewResult = new Button();
             pnlReportCard = new Panel();
+            panel1 = new Panel();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             dgvResultGrid = new DataGridView();
             sub_nm = new DataGridViewTextBoxColumn();
             int_mrks = new DataGridViewTextBoxColumn();
             ext_mrks = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            ttl_marks = new DataGridViewTextBoxColumn();
+            grade = new DataGridViewTextBoxColumn();
+            lbl_sNm = new Label();
+            txt_sNm = new TextBox();
             pnlReportCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).BeginInit();
             SuspendLayout();
             // 
             // lbl_sem
@@ -76,6 +82,8 @@
             // pnlReportCard
             // 
             pnlReportCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlReportCard.Controls.Add(txt_sNm);
+            pnlReportCard.Controls.Add(lbl_sNm);
             pnlReportCard.Controls.Add(panel1);
             pnlReportCard.Controls.Add(dgvResultGrid);
             pnlReportCard.Location = new Point(41, 73);
@@ -83,13 +91,38 @@
             pnlReportCard.Size = new Size(885, 468);
             pnlReportCard.TabIndex = 3;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(877, 70);
+            panel1.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(749, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(125, 62);
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // dgvResultGrid
             // 
             dgvResultGrid.AllowUserToAddRows = false;
             dgvResultGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvResultGrid.BorderStyle = BorderStyle.None;
             dgvResultGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultGrid.Columns.AddRange(new DataGridViewColumn[] { sub_nm, int_mrks, ext_mrks });
+            dgvResultGrid.Columns.AddRange(new DataGridViewColumn[] { sub_nm, int_mrks, ext_mrks, ttl_marks, grade });
             dgvResultGrid.Location = new Point(20, 264);
             dgvResultGrid.Name = "dgvResultGrid";
             dgvResultGrid.ReadOnly = true;
@@ -118,21 +151,35 @@
             ext_mrks.Name = "ext_mrks";
             ext_mrks.ReadOnly = true;
             // 
-            // panel1
+            // ttl_marks
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(877, 70);
-            panel1.TabIndex = 1;
+            ttl_marks.HeaderText = "Total Marks";
+            ttl_marks.MinimumWidth = 6;
+            ttl_marks.Name = "ttl_marks";
+            ttl_marks.ReadOnly = true;
             // 
-            // pictureBox1
+            // grade
             // 
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 62);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            grade.HeaderText = "Grade";
+            grade.MinimumWidth = 6;
+            grade.Name = "grade";
+            grade.ReadOnly = true;
+            // 
+            // lbl_sNm
+            // 
+            lbl_sNm.AutoSize = true;
+            lbl_sNm.Location = new Point(17, 91);
+            lbl_sNm.Name = "lbl_sNm";
+            lbl_sNm.Size = new Size(111, 20);
+            lbl_sNm.TabIndex = 2;
+            lbl_sNm.Text = "Student Name :";
+            // 
+            // txt_sNm
+            // 
+            txt_sNm.Location = new Point(134, 88);
+            txt_sNm.Name = "txt_sNm";
+            txt_sNm.Size = new Size(145, 27);
+            txt_sNm.TabIndex = 3;
             // 
             // ViewResultForm
             // 
@@ -148,9 +195,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Result Sheet";
             pnlReportCard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).EndInit();
+            pnlReportCard.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvResultGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,10 +211,15 @@
         private Button btnViewResult;
         private Panel pnlReportCard;
         private DataGridView dgvResultGrid;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private TextBox txt_sNm;
+        private Label lbl_sNm;
         private DataGridViewTextBoxColumn sub_nm;
         private DataGridViewTextBoxColumn int_mrks;
         private DataGridViewTextBoxColumn ext_mrks;
-        private Panel panel1;
-        private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn ttl_marks;
+        private DataGridViewTextBoxColumn grade;
     }
 }
