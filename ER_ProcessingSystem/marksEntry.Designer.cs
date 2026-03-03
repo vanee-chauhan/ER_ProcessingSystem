@@ -198,6 +198,7 @@
             btnSaveMarks.TabIndex = 2;
             btnSaveMarks.Text = "Save Marks to Database";
             btnSaveMarks.UseVisualStyleBackColor = true;
+            btnSaveMarks.Click += btnSaveMarks_Click;
             // 
             // marksEntry
             // 

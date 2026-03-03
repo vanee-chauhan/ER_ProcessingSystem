@@ -67,12 +67,96 @@ namespace ER_ProcessingSystem
             {
                 MessageBox.Show(ex.Message);
             }
-        
-        }
 
+        }
+        private void LoadSubjects()
+        {
+            using (OracleConnection con = new OracleConnection(connectionString))
+            {
+                con.Open();
+
+                string query = "SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT";
+                OracleDataAdapter da = new OracleDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmb_sub.DataSource = dt;
+                cmb_sub.DisplayMember = "SUBJECT_NAME";
+                cmb_sub.ValueMember = "SUBJECT_ID";
+            }
+        }
         private void marksEntry_Load(object sender, EventArgs e)
         {
             dgvMarksEntry.AutoGenerateColumns = false;
+            LoadSubjects();
+        }
+
+        private void btnSaveMarks_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OracleConnection con = new OracleConnection(connectionString))
+                {
+                    con.Open();
+
+                    int subjectId = Convert.ToInt32(cmb_sub.SelectedValue);
+
+                    foreach (DataGridViewRow row in dgvMarksEntry.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        int studentId = Convert.ToInt32(row.Cells["colStudentId"].Value);
+                        int internalMarks = Convert.ToInt32(row.Cells["colInternal"].Value);
+                        int externalMarks = Convert.ToInt32(row.Cells["colExternal"].Value);
+
+                        int total = internalMarks + externalMarks;
+
+                        string grade;
+
+                        if (total >= 80)
+                            grade = "A";
+                        else if (total >= 60)
+                            grade = "B";
+                        else if (total >= 50)
+                            grade = "C";
+                        else if (total >= 35)
+                            grade = "D";
+                        else
+                            grade = "F";
+
+                        string idQuery = "SELECT NVL(MAX(MARKS_ID),0)+1 FROM MARKS";
+                        OracleCommand cmdId = new OracleCommand(idQuery, con);
+                        int marksId = Convert.ToInt32(cmdId.ExecuteScalar());
+
+                        string insertQuery = @"INSERT INTO MARKS
+                                       (MARKS_ID, STUDENT_ID, SUBJECT_ID,
+                                        INTERNAL_MARKS, EXTERNAL_MARKS,
+                                        TOTAL_MARKS, GRADE)
+                                       VALUES
+                                       (:id, :sid, :subid,
+                                        :internal, :external,
+                                        :total, :grade)";
+
+                        OracleCommand cmd = new OracleCommand(insertQuery, con);
+
+                        cmd.Parameters.Add(":id", marksId);
+                        cmd.Parameters.Add(":sid", studentId);
+                        cmd.Parameters.Add(":subid", subjectId);
+                        cmd.Parameters.Add(":internal", internalMarks);
+                        cmd.Parameters.Add(":external", externalMarks);
+                        cmd.Parameters.Add(":total", total);
+                        cmd.Parameters.Add(":grade", grade);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("All Marks Saved Successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
