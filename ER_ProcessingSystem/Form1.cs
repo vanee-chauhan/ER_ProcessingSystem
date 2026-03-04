@@ -19,7 +19,7 @@ namespace ER_ProcessingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            General.usertype = "student";
+            General.role = "student";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -29,7 +29,7 @@ namespace ER_ProcessingSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            General.usertype = "tearcher";
+            General.role = "tearcher";
 
         }
     }

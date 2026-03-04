@@ -42,7 +42,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { examinationToolStripMenuItem, accountToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1179, 33);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(943, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -50,13 +51,13 @@
             // 
             examinationToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { enterStudentMarksToolStripMenuItem });
             examinationToolStripMenuItem.Name = "examinationToolStripMenuItem";
-            examinationToolStripMenuItem.Size = new Size(124, 29);
+            examinationToolStripMenuItem.Size = new Size(105, 24);
             examinationToolStripMenuItem.Text = "Examination";
             // 
             // enterStudentMarksToolStripMenuItem
             // 
             enterStudentMarksToolStripMenuItem.Name = "enterStudentMarksToolStripMenuItem";
-            enterStudentMarksToolStripMenuItem.Size = new Size(273, 34);
+            enterStudentMarksToolStripMenuItem.Size = new Size(224, 26);
             enterStudentMarksToolStripMenuItem.Text = "Enter Student Marks";
             enterStudentMarksToolStripMenuItem.Click += enterStudentMarksToolStripMenuItem_Click;
             // 
@@ -64,25 +65,27 @@
             // 
             accountToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logoutToolStripMenuItem });
             accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            accountToolStripMenuItem.Size = new Size(93, 29);
+            accountToolStripMenuItem.Size = new Size(77, 24);
             accountToolStripMenuItem.Text = "Account";
             // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(270, 34);
+            logoutToolStripMenuItem.Size = new Size(139, 26);
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // AdminDashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1179, 676);
+            ClientSize = new Size(943, 541);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AdminDashboard";
-            Text = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Admin Panel";
             Load += AdminDashboard_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

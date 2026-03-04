@@ -88,7 +88,7 @@
             // txtName
             // 
             txtName.Location = new Point(62, 118);
-            txtName.Margin = new Padding(2, 2, 2, 2);
+            txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
             txtName.Size = new Size(273, 27);
             txtName.TabIndex = 3;
@@ -96,7 +96,7 @@
             // txtUsername
             // 
             txtUsername.Location = new Point(429, 118);
-            txtUsername.Margin = new Padding(2, 2, 2, 2);
+            txtUsername.Margin = new Padding(2);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(273, 27);
             txtUsername.TabIndex = 4;
@@ -104,7 +104,7 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(66, 267);
-            txtEmail.Margin = new Padding(2, 2, 2, 2);
+            txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(273, 27);
             txtEmail.TabIndex = 5;
@@ -142,7 +142,7 @@
             // txtPassword
             // 
             txtPassword.Location = new Point(66, 345);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(273, 27);
@@ -151,7 +151,7 @@
             // txtConfirmPassword
             // 
             txtConfirmPassword.Location = new Point(429, 345);
-            txtConfirmPassword.Margin = new Padding(2, 2, 2, 2);
+            txtConfirmPassword.Margin = new Padding(2);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
             txtConfirmPassword.Size = new Size(273, 27);
@@ -162,7 +162,7 @@
             panel1.BackColor = Color.LightSteelBlue;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-2, -3);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(841, 80);
             panel1.TabIndex = 13;
@@ -170,7 +170,7 @@
             // button1
             // 
             button1.Location = new Point(357, 406);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(90, 27);
             button1.TabIndex = 18;
@@ -206,7 +206,7 @@
             // 
             radioMale.AutoSize = true;
             radioMale.Location = new Point(156, 169);
-            radioMale.Margin = new Padding(2, 2, 2, 2);
+            radioMale.Margin = new Padding(2);
             radioMale.Name = "radioMale";
             radioMale.Size = new Size(63, 24);
             radioMale.TabIndex = 19;
@@ -218,7 +218,7 @@
             // 
             radioFemale.AutoSize = true;
             radioFemale.Location = new Point(156, 197);
-            radioFemale.Margin = new Padding(2, 2, 2, 2);
+            radioFemale.Margin = new Padding(2);
             radioFemale.Name = "radioFemale";
             radioFemale.Size = new Size(78, 24);
             radioFemale.TabIndex = 20;
@@ -231,7 +231,7 @@
             cmbCourse.FormattingEnabled = true;
             cmbCourse.Items.AddRange(new object[] { "Bsc.IT" });
             cmbCourse.Location = new Point(505, 182);
-            cmbCourse.Margin = new Padding(2, 2, 2, 2);
+            cmbCourse.Margin = new Padding(2);
             cmbCourse.Name = "cmbCourse";
             cmbCourse.Size = new Size(146, 28);
             cmbCourse.TabIndex = 21;
@@ -241,7 +241,7 @@
             cmbSemester.FormattingEnabled = true;
             cmbSemester.Items.AddRange(new object[] { "4" });
             cmbSemester.Location = new Point(505, 245);
-            cmbSemester.Margin = new Padding(2, 2, 2, 2);
+            cmbSemester.Margin = new Padding(2);
             cmbSemester.Name = "cmbSemester";
             cmbSemester.Size = new Size(146, 28);
             cmbSemester.TabIndex = 22;
@@ -302,9 +302,10 @@
             Controls.Add(txtName);
             Controls.Add(label3);
             Controls.Add(label2);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "register";
-            Text = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Registration";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

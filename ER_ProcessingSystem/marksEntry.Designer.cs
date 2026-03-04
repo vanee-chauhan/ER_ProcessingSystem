@@ -41,7 +41,8 @@
             colStudentName = new DataGridViewTextBoxColumn();
             colInternal = new DataGridViewTextBoxColumn();
             colExternal = new DataGridViewTextBoxColumn();
-            btnSaveMarks = new Button();
+            Edit = new DataGridViewButtonColumn();
+            Save = new DataGridViewButtonColumn();
             gb_selectclass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMarksEntry).BeginInit();
             SuspendLayout();
@@ -58,7 +59,7 @@
             gb_selectclass.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             gb_selectclass.Location = new Point(24, 21);
             gb_selectclass.Name = "gb_selectclass";
-            gb_selectclass.Size = new Size(310, 224);
+            gb_selectclass.Size = new Size(1025, 96);
             gb_selectclass.TabIndex = 0;
             gb_selectclass.TabStop = false;
             gb_selectclass.Text = "Select Class";
@@ -67,9 +68,9 @@
             // btn_loadStudent
             // 
             btn_loadStudent.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_loadStudent.Location = new Point(100, 180);
+            btn_loadStudent.Location = new Point(872, 32);
             btn_loadStudent.Name = "btn_loadStudent";
-            btn_loadStudent.Size = new Size(147, 29);
+            btn_loadStudent.Size = new Size(147, 46);
             btn_loadStudent.TabIndex = 6;
             btn_loadStudent.Text = "Load Student";
             btn_loadStudent.UseVisualStyleBackColor = true;
@@ -80,7 +81,7 @@
             cmb_sub.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_sub.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_sub.FormattingEnabled = true;
-            cmb_sub.Location = new Point(121, 124);
+            cmb_sub.Location = new Point(617, 40);
             cmb_sub.Name = "cmb_sub";
             cmb_sub.Size = new Size(151, 31);
             cmb_sub.TabIndex = 5;
@@ -91,7 +92,7 @@
             cmb_sem.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_sem.FormattingEnabled = true;
             cmb_sem.Items.AddRange(new object[] { "4" });
-            cmb_sem.Location = new Point(121, 83);
+            cmb_sem.Location = new Point(367, 40);
             cmb_sem.Name = "cmb_sem";
             cmb_sem.Size = new Size(151, 31);
             cmb_sem.TabIndex = 4;
@@ -102,7 +103,7 @@
             cmb_course.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_course.FormattingEnabled = true;
             cmb_course.Items.AddRange(new object[] { "Bsc.IT" });
-            cmb_course.Location = new Point(121, 42);
+            cmb_course.Location = new Point(95, 40);
             cmb_course.Name = "cmb_course";
             cmb_course.Size = new Size(151, 31);
             cmb_course.TabIndex = 3;
@@ -111,7 +112,7 @@
             // 
             lbl_sub.AutoSize = true;
             lbl_sub.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_sub.Location = new Point(14, 124);
+            lbl_sub.Location = new Point(536, 44);
             lbl_sub.Name = "lbl_sub";
             lbl_sub.Size = new Size(75, 23);
             lbl_sub.TabIndex = 2;
@@ -121,7 +122,7 @@
             // 
             lbl_sem.AutoSize = true;
             lbl_sem.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_sem.Location = new Point(0, 83);
+            lbl_sem.Location = new Point(272, 44);
             lbl_sem.Name = "lbl_sem";
             lbl_sem.Size = new Size(89, 23);
             lbl_sem.TabIndex = 1;
@@ -132,7 +133,7 @@
             // 
             lbl_course.AutoSize = true;
             lbl_course.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_course.Location = new Point(17, 45);
+            lbl_course.Location = new Point(17, 44);
             lbl_course.Name = "lbl_course";
             lbl_course.Size = new Size(72, 23);
             lbl_course.TabIndex = 0;
@@ -141,14 +142,16 @@
             // dgvMarksEntry
             // 
             dgvMarksEntry.AllowUserToAddRows = false;
+            dgvMarksEntry.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvMarksEntry.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMarksEntry.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMarksEntry.Columns.AddRange(new DataGridViewColumn[] { colStudentId, colStudentName, colInternal, colExternal });
-            dgvMarksEntry.Location = new Point(24, 265);
+            dgvMarksEntry.Columns.AddRange(new DataGridViewColumn[] { colStudentId, colStudentName, colInternal, colExternal, Edit, Save });
+            dgvMarksEntry.Location = new Point(24, 123);
             dgvMarksEntry.Name = "dgvMarksEntry";
             dgvMarksEntry.RowHeadersWidth = 51;
-            dgvMarksEntry.Size = new Size(616, 188);
+            dgvMarksEntry.Size = new Size(1037, 385);
             dgvMarksEntry.TabIndex = 1;
+            dgvMarksEntry.CellClick += dgvMarksEntry_CellClick;
             dgvMarksEntry.CellContentClick += dataGridView1_CellContentClick;
             // 
             // colStudentId
@@ -171,30 +174,36 @@
             colInternal.HeaderText = "Internal Marks";
             colInternal.MinimumWidth = 6;
             colInternal.Name = "colInternal";
+            colInternal.ReadOnly = true;
             // 
             // colExternal
             // 
             colExternal.HeaderText = "External Marks";
             colExternal.MinimumWidth = 6;
             colExternal.Name = "colExternal";
+            colExternal.ReadOnly = true;
             // 
-            // btnSaveMarks
+            // Edit
             // 
-            btnSaveMarks.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSaveMarks.Location = new Point(366, 475);
-            btnSaveMarks.Name = "btnSaveMarks";
-            btnSaveMarks.Size = new Size(211, 29);
-            btnSaveMarks.TabIndex = 2;
-            btnSaveMarks.Text = "Save Marks to Database";
-            btnSaveMarks.UseVisualStyleBackColor = true;
-            btnSaveMarks.Click += btnSaveMarks_Click_1;
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Text = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Save
+            // 
+            Save.HeaderText = "Save";
+            Save.MinimumWidth = 6;
+            Save.Name = "Save";
+            Save.Text = "Save";
+            Save.UseColumnTextForButtonValue = true;
             // 
             // marksEntry
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(877, 516);
-            Controls.Add(btnSaveMarks);
+            ClientSize = new Size(1091, 520);
             Controls.Add(dgvMarksEntry);
             Controls.Add(gb_selectclass);
             Name = "marksEntry";
@@ -218,10 +227,11 @@
         private ComboBox cmb_sem;
         private Button btn_loadStudent;
         private DataGridView dgvMarksEntry;
-        private Button btnSaveMarks;
         private DataGridViewTextBoxColumn colStudentId;
         private DataGridViewTextBoxColumn colStudentName;
         private DataGridViewTextBoxColumn colInternal;
         private DataGridViewTextBoxColumn colExternal;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Save;
     }
 }

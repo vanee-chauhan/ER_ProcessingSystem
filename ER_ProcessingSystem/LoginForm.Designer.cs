@@ -42,56 +42,52 @@
             // 
             lbl_login.AutoSize = true;
             lbl_login.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_login.Location = new Point(386, 99);
-            lbl_login.Margin = new Padding(4, 0, 4, 0);
+            lbl_login.Location = new Point(309, 79);
             lbl_login.Name = "lbl_login";
-            lbl_login.Size = new Size(101, 41);
+            lbl_login.Size = new Size(84, 34);
             lbl_login.TabIndex = 0;
             lbl_login.Text = "Login";
             // 
             // lbl_nm
             // 
             lbl_nm.AutoSize = true;
-            lbl_nm.Location = new Point(182, 176);
-            lbl_nm.Margin = new Padding(4, 0, 4, 0);
+            lbl_nm.Location = new Point(146, 141);
             lbl_nm.Name = "lbl_nm";
-            lbl_nm.Size = new Size(100, 25);
+            lbl_nm.Size = new Size(82, 20);
             lbl_nm.TabIndex = 1;
             lbl_nm.Text = "Username :";
             // 
             // lbl_pwd
             // 
             lbl_pwd.AutoSize = true;
-            lbl_pwd.Location = new Point(182, 249);
-            lbl_pwd.Margin = new Padding(4, 0, 4, 0);
+            lbl_pwd.Location = new Point(146, 199);
             lbl_pwd.Name = "lbl_pwd";
-            lbl_pwd.Size = new Size(96, 25);
+            lbl_pwd.Size = new Size(77, 20);
             lbl_pwd.TabIndex = 2;
             lbl_pwd.Text = "Password :";
             // 
             // tb_nm
             // 
-            tb_nm.Location = new Point(291, 176);
-            tb_nm.Margin = new Padding(4, 4, 4, 4);
+            tb_nm.Location = new Point(233, 141);
             tb_nm.Name = "tb_nm";
-            tb_nm.Size = new Size(326, 31);
+            tb_nm.Size = new Size(262, 27);
             tb_nm.TabIndex = 3;
+            tb_nm.Text = "Vanee_chauhan";
             // 
             // tb_pwd
             // 
-            tb_pwd.Location = new Point(291, 242);
-            tb_pwd.Margin = new Padding(4, 4, 4, 4);
+            tb_pwd.Location = new Point(233, 194);
             tb_pwd.Name = "tb_pwd";
             tb_pwd.PasswordChar = '*';
-            tb_pwd.Size = new Size(326, 31);
+            tb_pwd.Size = new Size(262, 27);
             tb_pwd.TabIndex = 4;
+            tb_pwd.Text = "vanee123";
             // 
             // btn_login
             // 
-            btn_login.Location = new Point(386, 310);
-            btn_login.Margin = new Padding(4, 4, 4, 4);
+            btn_login.Location = new Point(309, 248);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(118, 36);
+            btn_login.Size = new Size(94, 29);
             btn_login.TabIndex = 5;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = true;
@@ -100,20 +96,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(302, 376);
+            label1.Location = new Point(242, 301);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(202, 25);
+            label1.Size = new Size(167, 20);
             label1.TabIndex = 6;
             label1.Text = "Don't have an account? ";
             // 
             // lnklblsignup
             // 
             lnklblsignup.AutoSize = true;
-            lnklblsignup.Location = new Point(501, 376);
+            lnklblsignup.Location = new Point(401, 301);
             lnklblsignup.Margin = new Padding(2, 0, 2, 0);
             lnklblsignup.Name = "lnklblsignup";
-            lnklblsignup.Size = new Size(73, 25);
+            lnklblsignup.Size = new Size(59, 20);
             lnklblsignup.TabIndex = 7;
             lnklblsignup.TabStop = true;
             lnklblsignup.Text = "Sign up";
@@ -121,9 +117,9 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(869, 499);
+            ClientSize = new Size(695, 399);
             Controls.Add(lnklblsignup);
             Controls.Add(label1);
             Controls.Add(btn_login);
@@ -132,9 +128,10 @@
             Controls.Add(lbl_pwd);
             Controls.Add(lbl_nm);
             Controls.Add(lbl_login);
-            Margin = new Padding(4, 4, 4, 4);
             Name = "LoginForm";
-            Text = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login Student / Teacher";
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }

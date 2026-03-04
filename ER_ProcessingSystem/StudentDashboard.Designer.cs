@@ -72,7 +72,7 @@
             // logOutToolStripMenuItem
             // 
             logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            logOutToolStripMenuItem.Size = new Size(224, 26);
+            logOutToolStripMenuItem.Size = new Size(141, 26);
             logOutToolStripMenuItem.Text = "LogOut";
             logOutToolStripMenuItem.Click += logOutToolStripMenuItem_Click;
             // 
@@ -85,6 +85,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "StudentDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Student Dashboard";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);

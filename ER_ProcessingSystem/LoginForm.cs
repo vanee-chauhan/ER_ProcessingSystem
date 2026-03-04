@@ -51,32 +51,89 @@ namespace ER_ProcessingSystem
                 {
                     oc.Open();
 
-                    string query = "SELECT ROLE FROM LOGIN WHERE USERNAME = :username AND PASSWORD = :password";
+                    string query = "SELECT USER_ID, ROLE FROM LOGIN WHERE USERNAME = :username AND PASSWORD = :password";
 
                     using (OracleCommand cmd = new OracleCommand(query, oc))
                     {
                         cmd.Parameters.Add(new OracleParameter("username", tb_nm.Text.Trim()));
                         cmd.Parameters.Add(new OracleParameter("password", tb_pwd.Text.Trim()));
 
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        long userId = -1;
+                        string role = "";
+                        //object result = cmd.ExecuteScalar();
+                        using (OracleDataReader reader = cmd.ExecuteReader())
                         {
-                            string role = result.ToString();
+                            if (reader.Read()) // move to first row
+                            {
+                                userId = reader.GetInt32(0);
+                                role = reader.GetString(1);
+                                General.role = role;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password");
+                            }
 
+                        }
+
+                        if (string.IsNullOrWhiteSpace( role ) == false)
+                        {
+                            //string role = result.ToString();
                             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            
                             this.Hide();
 
                             if (role == "STUDENT")
                             {
                                 StudentDashboard studentForm = new StudentDashboard();
-                                studentForm.Show();
+                                 string query1 = "SELECT STUDENT_ID FROM STUDENT WHERE USER_ID = :userid";
+                                try
+                                {
+                                    using (OracleConnection oc1 = new OracleConnection(connectionString))
+                                    {
+                                        oc1.Open();
+                                        using (OracleCommand cmd1 = new OracleCommand(query1, oc1))
+                                        {
+                                            cmd1.Parameters.Add("userid", OracleDbType.Int64).Value = userId;
+                                            object result1 = cmd1.ExecuteScalar();
+                                            if (result1 != null)
+                                            {
+                                                General.studentId = Convert.ToInt64(result1.ToString());
+                                                General.teacherId = -1;
+                                                General.userId = userId;
+
+                                                studentForm.Show();
+                                            }
+                                        }
+                                    }
+                                }
+                                catch { Application.Exit(); }
                             }
                             else if (role == "ADMIN")
                             {
-                                AdminDashboard adminForm = new AdminDashboard();
-                                adminForm.Show();
+                                string query1 = "SELECT TEACHER_ID FROM TEACHER WHERE USER_ID = :userid";
+                                try
+                                {
+                                    using (OracleConnection oc1 = new OracleConnection(connectionString))
+                                    {
+                                        oc1.Open();
+                                        using (OracleCommand cmd1 = new OracleCommand(query1, oc1))
+                                        {
+                                            cmd1.Parameters.Add("userid", OracleDbType.Int64).Value = userId;
+                                            object result1 = cmd1.ExecuteScalar();
+
+                                            General.teacherId = Convert.ToInt64(result1.ToString());
+
+                                            General.studentId = -1;
+                                            General.userId = userId;
+                                            AdminDashboard adminForm = new AdminDashboard();
+                                            adminForm.Show();
+                                        }
+                                    }
+                                }catch(Exception ex)
+                                {
+
+                                }
                             }
                         }
                         else
