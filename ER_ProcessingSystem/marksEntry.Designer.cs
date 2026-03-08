@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             gb_selectclass = new GroupBox();
-            btn_loadStudent = new Button();
             cmb_sub = new ComboBox();
             cmb_sem = new ComboBox();
             cmb_course = new ComboBox();
             lbl_sub = new Label();
             lbl_sem = new Label();
             lbl_course = new Label();
+            btn_loadStudent = new Button();
             dgvMarksEntry = new DataGridView();
             colStudentId = new DataGridViewTextBoxColumn();
             colStudentName = new DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             // 
             // gb_selectclass
             // 
-            gb_selectclass.Controls.Add(btn_loadStudent);
+            gb_selectclass.BackColor = Color.SteelBlue;
             gb_selectclass.Controls.Add(cmb_sub);
             gb_selectclass.Controls.Add(cmb_sem);
             gb_selectclass.Controls.Add(cmb_course);
@@ -57,24 +57,14 @@
             gb_selectclass.Controls.Add(lbl_sem);
             gb_selectclass.Controls.Add(lbl_course);
             gb_selectclass.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gb_selectclass.ForeColor = Color.White;
             gb_selectclass.Location = new Point(24, 21);
             gb_selectclass.Name = "gb_selectclass";
-            gb_selectclass.Size = new Size(1025, 96);
+            gb_selectclass.Size = new Size(810, 96);
             gb_selectclass.TabIndex = 0;
             gb_selectclass.TabStop = false;
             gb_selectclass.Text = "Select Class";
             gb_selectclass.Enter += gb_selectclass_Enter;
-            // 
-            // btn_loadStudent
-            // 
-            btn_loadStudent.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_loadStudent.Location = new Point(872, 32);
-            btn_loadStudent.Name = "btn_loadStudent";
-            btn_loadStudent.Size = new Size(147, 46);
-            btn_loadStudent.TabIndex = 6;
-            btn_loadStudent.Text = "Load Student";
-            btn_loadStudent.UseVisualStyleBackColor = true;
-            btn_loadStudent.Click += btn_loadStudent_Click;
             // 
             // cmb_sub
             // 
@@ -85,6 +75,7 @@
             cmb_sub.Name = "cmb_sub";
             cmb_sub.Size = new Size(151, 31);
             cmb_sub.TabIndex = 5;
+          //  cmb_sub.SelectedIndexChanged += cmb_sub_SelectedIndexChanged;
             // 
             // cmb_sem
             // 
@@ -139,11 +130,25 @@
             lbl_course.TabIndex = 0;
             lbl_course.Text = "Course :";
             // 
+            // btn_loadStudent
+            // 
+            btn_loadStudent.BackColor = Color.SteelBlue;
+            btn_loadStudent.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_loadStudent.ForeColor = Color.White;
+            btn_loadStudent.Location = new Point(870, 53);
+            btn_loadStudent.Name = "btn_loadStudent";
+            btn_loadStudent.Size = new Size(147, 46);
+            btn_loadStudent.TabIndex = 6;
+            btn_loadStudent.Text = "Load Student";
+            btn_loadStudent.UseVisualStyleBackColor = false;
+            btn_loadStudent.Click += btn_loadStudent_Click;
+            // 
             // dgvMarksEntry
             // 
             dgvMarksEntry.AllowUserToAddRows = false;
             dgvMarksEntry.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvMarksEntry.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMarksEntry.BackgroundColor = Color.AliceBlue;
             dgvMarksEntry.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMarksEntry.Columns.AddRange(new DataGridViewColumn[] { colStudentId, colStudentName, colInternal, colExternal, Edit, Save });
             dgvMarksEntry.Location = new Point(24, 123);
@@ -203,12 +208,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(1091, 520);
+            Controls.Add(btn_loadStudent);
             Controls.Add(dgvMarksEntry);
             Controls.Add(gb_selectclass);
             Name = "marksEntry";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MraksEntry";
+            WindowState = FormWindowState.Maximized;
             Load += marksEntry_Load;
             gb_selectclass.ResumeLayout(false);
             gb_selectclass.PerformLayout();

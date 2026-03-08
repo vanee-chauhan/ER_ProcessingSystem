@@ -30,7 +30,7 @@ namespace ER_ProcessingSystem
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            // Validation
+
             if (string.IsNullOrWhiteSpace(tb_nm.Text))
             {
                 MessageBox.Show("Please enter Username", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -51,42 +51,37 @@ namespace ER_ProcessingSystem
                 {
                     oc.Open();
 
-                    string query = "SELECT USER_ID, ROLE FROM LOGIN WHERE USERNAME = :username AND PASSWORD = :password";
+                    string query = "SELECT USER_ID, ROLE FROM LOGIN WHERE USERNAME = :username AND PASSWORD = :password AND ROLE= :role";
 
                     using (OracleCommand cmd = new OracleCommand(query, oc))
                     {
                         cmd.Parameters.Add(new OracleParameter("username", tb_nm.Text.Trim()));
                         cmd.Parameters.Add(new OracleParameter("password", tb_pwd.Text.Trim()));
+                        cmd.Parameters.Add(new OracleParameter("role", General.role.Trim()));
 
                         long userId = -1;
                         string role = "";
-                        //object result = cmd.ExecuteScalar();
                         using (OracleDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.Read()) // move to first row
+                            if (reader.Read()) // 
                             {
                                 userId = reader.GetInt32(0);
                                 role = reader.GetString(1);
                                 General.role = role;
                             }
-                            else
-                            {
-                                MessageBox.Show("Invalid username or password");
-                            }
-
                         }
 
-                        if (string.IsNullOrWhiteSpace( role ) == false)
+                        if (string.IsNullOrWhiteSpace(role) == false)
                         {
-                            //string role = result.ToString();
+
                             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
+
                             this.Hide();
 
                             if (role == "STUDENT")
                             {
                                 StudentDashboard studentForm = new StudentDashboard();
-                                 string query1 = "SELECT STUDENT_ID FROM STUDENT WHERE USER_ID = :userid";
+                                string query1 = "SELECT STUDENT_ID FROM STUDENT WHERE USER_ID = :userid";
                                 try
                                 {
                                     using (OracleConnection oc1 = new OracleConnection(connectionString))
@@ -109,7 +104,7 @@ namespace ER_ProcessingSystem
                                 }
                                 catch { Application.Exit(); }
                             }
-                            else if (role == "ADMIN")
+                            else if (role == "ADMIN" || role == "TEACHER")
                             {
                                 string query1 = "SELECT TEACHER_ID FROM TEACHER WHERE USER_ID = :userid";
                                 try
@@ -130,7 +125,8 @@ namespace ER_ProcessingSystem
                                             adminForm.Show();
                                         }
                                     }
-                                }catch(Exception ex)
+                                }
+                                catch (Exception ex)
                                 {
 
                                 }
@@ -151,9 +147,29 @@ namespace ER_ProcessingSystem
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            register reg=new register();
+            register reg = new register();
             reg.Show();
             this.Hide();
+        }
+
+        private void tb_pwd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            if(General.role == "TEACHER")
+            {
+                label1.Visible = false;
+                lnklblsignup.Visible = false;
+            }
+            else
+            {
+                label1.Visible = true;
+                lnklblsignup.Visible = true;
+
+            }
         }
     }
 }

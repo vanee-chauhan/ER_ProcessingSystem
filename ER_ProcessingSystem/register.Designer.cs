@@ -159,8 +159,9 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.LightSteelBlue;
+            panel1.BackColor = Color.SteelBlue;
             panel1.Controls.Add(label1);
+            panel1.ForeColor = Color.White;
             panel1.Location = new Point(-2, -3);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
@@ -280,6 +281,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(817, 476);
             Controls.Add(label10);
             Controls.Add(label9);

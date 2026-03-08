@@ -32,7 +32,10 @@ namespace ER_ProcessingSystem
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm frm = new LoginForm();
+            General.studentId = -1;
+            General.teacherId = -1;
+            General.role = "";
+            MainForm frm = new MainForm();
             frm.Show();
         }
 

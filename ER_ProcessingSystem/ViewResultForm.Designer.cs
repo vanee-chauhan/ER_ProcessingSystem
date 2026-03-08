@@ -46,6 +46,7 @@
             txt_sNm = new TextBox();
             lbl_sNm = new Label();
             panel1 = new Panel();
+            label1 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             dgvResultGrid = new DataGridView();
@@ -86,6 +87,7 @@
             // btnViewResult
             // 
             btnViewResult.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnViewResult.ForeColor = Color.Black;
             btnViewResult.Location = new Point(745, 18);
             btnViewResult.Name = "btnViewResult";
             btnViewResult.Size = new Size(159, 29);
@@ -96,6 +98,7 @@
             // 
             // pnlReportCard
             // 
+            pnlReportCard.BackColor = Color.White;
             pnlReportCard.BorderStyle = BorderStyle.FixedSingle;
             pnlReportCard.Controls.Add(tb_sgpa);
             pnlReportCard.Controls.Add(lbl_sgpa);
@@ -113,13 +116,13 @@
             pnlReportCard.Controls.Add(dgvResultGrid);
             pnlReportCard.Location = new Point(41, 73);
             pnlReportCard.Name = "pnlReportCard";
-            pnlReportCard.Size = new Size(885, 537);
+            pnlReportCard.Size = new Size(885, 577);
             pnlReportCard.TabIndex = 3;
             pnlReportCard.Paint += pnlReportCard_Paint;
             // 
             // tb_sgpa
             // 
-            tb_sgpa.Location = new Point(369, 496);
+            tb_sgpa.Location = new Point(368, 521);
             tb_sgpa.Name = "tb_sgpa";
             tb_sgpa.Size = new Size(145, 27);
             tb_sgpa.TabIndex = 13;
@@ -127,7 +130,7 @@
             // lbl_sgpa
             // 
             lbl_sgpa.AutoSize = true;
-            lbl_sgpa.Location = new Point(307, 496);
+            lbl_sgpa.Location = new Point(302, 521);
             lbl_sgpa.Name = "lbl_sgpa";
             lbl_sgpa.Size = new Size(51, 20);
             lbl_sgpa.TabIndex = 12;
@@ -135,14 +138,14 @@
             // 
             // tb_fgrd
             // 
-            tb_fgrd.Location = new Point(369, 461);
+            tb_fgrd.Location = new Point(368, 478);
             tb_fgrd.Name = "tb_fgrd";
             tb_fgrd.Size = new Size(145, 27);
             tb_fgrd.TabIndex = 11;
             // 
             // tb_total
             // 
-            tb_total.Location = new Point(369, 426);
+            tb_total.Location = new Point(368, 435);
             tb_total.Name = "tb_total";
             tb_total.Size = new Size(145, 27);
             tb_total.TabIndex = 10;
@@ -150,7 +153,7 @@
             // lbl_grade
             // 
             lbl_grade.AutoSize = true;
-            lbl_grade.Location = new Point(307, 461);
+            lbl_grade.Location = new Point(300, 485);
             lbl_grade.Name = "lbl_grade";
             lbl_grade.Size = new Size(56, 20);
             lbl_grade.TabIndex = 9;
@@ -160,7 +163,7 @@
             // lblGrandTotal
             // 
             lblGrandTotal.AutoSize = true;
-            lblGrandTotal.Location = new Point(314, 429);
+            lblGrandTotal.Location = new Point(307, 442);
             lblGrandTotal.Name = "lblGrandTotal";
             lblGrandTotal.Size = new Size(49, 20);
             lblGrandTotal.TabIndex = 8;
@@ -168,7 +171,7 @@
             // 
             // tb_sem
             // 
-            tb_sem.Location = new Point(717, 121);
+            tb_sem.Location = new Point(717, 128);
             tb_sem.Name = "tb_sem";
             tb_sem.Size = new Size(145, 27);
             tb_sem.TabIndex = 7;
@@ -176,7 +179,7 @@
             // lblSem
             // 
             lblSem.AutoSize = true;
-            lblSem.Location = new Point(620, 124);
+            lblSem.Location = new Point(620, 131);
             lblSem.Name = "lblSem";
             lblSem.Size = new Size(77, 20);
             lblSem.TabIndex = 6;
@@ -184,7 +187,7 @@
             // 
             // tb_cs
             // 
-            tb_cs.Location = new Point(717, 88);
+            tb_cs.Location = new Point(717, 92);
             tb_cs.Name = "tb_cs";
             tb_cs.Size = new Size(145, 27);
             tb_cs.TabIndex = 5;
@@ -192,7 +195,7 @@
             // lbl_course
             // 
             lbl_course.AutoSize = true;
-            lbl_course.Location = new Point(636, 91);
+            lbl_course.Location = new Point(636, 95);
             lbl_course.Name = "lbl_course";
             lbl_course.Size = new Size(61, 20);
             lbl_course.TabIndex = 4;
@@ -200,7 +203,7 @@
             // 
             // txt_sNm
             // 
-            txt_sNm.Location = new Point(134, 88);
+            txt_sNm.Location = new Point(123, 92);
             txt_sNm.Name = "txt_sNm";
             txt_sNm.Size = new Size(354, 27);
             txt_sNm.TabIndex = 3;
@@ -208,7 +211,7 @@
             // lbl_sNm
             // 
             lbl_sNm.AutoSize = true;
-            lbl_sNm.Location = new Point(17, 91);
+            lbl_sNm.Location = new Point(6, 95);
             lbl_sNm.Name = "lbl_sNm";
             lbl_sNm.Size = new Size(111, 20);
             lbl_sNm.TabIndex = 2;
@@ -216,19 +219,30 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(877, 70);
+            panel1.Size = new Size(877, 79);
             panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(190, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(414, 32);
+            label1.TabIndex = 2;
+            label1.Text = "VNSGU DEPARTMENT OF ICT";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(749, 3);
+            pictureBox2.Location = new Point(753, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(125, 62);
+            pictureBox2.Size = new Size(121, 73);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -238,7 +252,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(89, 62);
+            pictureBox1.Size = new Size(85, 73);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -247,10 +261,11 @@
             // 
             dgvResultGrid.AllowUserToAddRows = false;
             dgvResultGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvResultGrid.BackgroundColor = Color.White;
             dgvResultGrid.BorderStyle = BorderStyle.None;
             dgvResultGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvResultGrid.Columns.AddRange(new DataGridViewColumn[] { sub_nm, int_mrks, ext_mrks, ttl_marks, grade });
-            dgvResultGrid.Location = new Point(17, 169);
+            dgvResultGrid.Location = new Point(17, 173);
             dgvResultGrid.Name = "dgvResultGrid";
             dgvResultGrid.ReadOnly = true;
             dgvResultGrid.RowHeadersWidth = 51;
@@ -317,7 +332,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(970, 679);
             Controls.Add(cmb_cs);
             Controls.Add(lblCs);
@@ -328,10 +343,12 @@
             Name = "ViewResultForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Result Sheet";
+            WindowState = FormWindowState.Maximized;
             Load += ViewResultForm_Load;
             pnlReportCard.ResumeLayout(false);
             pnlReportCard.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvResultGrid).EndInit();
@@ -368,5 +385,6 @@
         private Label lblGrandTotal;
         private TextBox tb_sgpa;
         private Label lbl_sgpa;
+        private Label label1;
     }
 }

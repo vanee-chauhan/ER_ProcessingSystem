@@ -41,28 +41,33 @@
             // lbl_login
             // 
             lbl_login.AutoSize = true;
-            lbl_login.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_login.Location = new Point(309, 79);
+            lbl_login.BackColor = Color.Transparent;
+            lbl_login.FlatStyle = FlatStyle.Flat;
+            lbl_login.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_login.ForeColor = Color.Black;
+            lbl_login.Location = new Point(293, 78);
             lbl_login.Name = "lbl_login";
-            lbl_login.Size = new Size(84, 34);
+            lbl_login.Size = new Size(89, 35);
             lbl_login.TabIndex = 0;
             lbl_login.Text = "Login";
             // 
             // lbl_nm
             // 
             lbl_nm.AutoSize = true;
+            lbl_nm.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_nm.Location = new Point(146, 141);
             lbl_nm.Name = "lbl_nm";
-            lbl_nm.Size = new Size(82, 20);
+            lbl_nm.Size = new Size(88, 20);
             lbl_nm.TabIndex = 1;
             lbl_nm.Text = "Username :";
             // 
             // lbl_pwd
             // 
             lbl_pwd.AutoSize = true;
+            lbl_pwd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_pwd.Location = new Point(146, 199);
             lbl_pwd.Name = "lbl_pwd";
-            lbl_pwd.Size = new Size(77, 20);
+            lbl_pwd.Size = new Size(84, 20);
             lbl_pwd.TabIndex = 2;
             lbl_pwd.Text = "Password :";
             // 
@@ -72,7 +77,6 @@
             tb_nm.Name = "tb_nm";
             tb_nm.Size = new Size(262, 27);
             tb_nm.TabIndex = 3;
-            tb_nm.Text = "Vanee_chauhan";
             // 
             // tb_pwd
             // 
@@ -81,10 +85,11 @@
             tb_pwd.PasswordChar = '*';
             tb_pwd.Size = new Size(262, 27);
             tb_pwd.TabIndex = 4;
-            tb_pwd.Text = "vanee123";
+            tb_pwd.TextChanged += tb_pwd_TextChanged;
             // 
             // btn_login
             // 
+            btn_login.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_login.Location = new Point(309, 248);
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(94, 29);
@@ -119,6 +124,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(695, 399);
             Controls.Add(lnklblsignup);
             Controls.Add(label1);
@@ -131,7 +137,7 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Student / Teacher";
-            TopMost = true;
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

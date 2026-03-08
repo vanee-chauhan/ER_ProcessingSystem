@@ -14,7 +14,7 @@ namespace ER_ProcessingSystem
 {
     public partial class marksEntry : Form
     {
-       
+
         public marksEntry()
         {
             InitializeComponent();
@@ -333,6 +333,7 @@ namespace ER_ProcessingSystem
                 }
             }
         }
+
     }
 }
 

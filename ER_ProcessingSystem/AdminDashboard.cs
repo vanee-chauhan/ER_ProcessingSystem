@@ -40,16 +40,36 @@ namespace ER_ProcessingSystem
         private void enterStudentMarksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             marksEntry mE = new marksEntry();
-            this.Hide();
+            mE.MdiParent = this;
+
             mE.Show();
 
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
+
             this.Hide();
-            loginForm.Show();
+            General.studentId = -1;
+            General.teacherId = -1;
+            General.role = "";
+            MainForm frm = new MainForm();
+            frm.Show();
+        }
+
+        private void manageStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student s = new Student();
+            s.MdiParent = this;
+
+            s.Show();
+        }
+
+        private void manageSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            subject sub = new subject();
+            sub.MdiParent = this;
+            sub.Show();
         }
     }
 }

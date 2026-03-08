@@ -88,7 +88,7 @@ namespace ER_ProcessingSystem
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    
+                   
 
                     if (dt.Rows.Count > 0)
                     {
@@ -129,15 +129,14 @@ namespace ER_ProcessingSystem
                         dgvResultGrid.AutoGenerateColumns = false; // use predefined columns
                         dgvResultGrid.DataSource = dt;
 
-                        // Show in DataGridView
-                        //dgvResultGrid.DataSource = dt;
+                      
 
-                        // Student Info (take first row)
+                        
                         txt_sNm.Text = dt.Rows[0]["full_name"].ToString();
                         tb_cs.Text = dt.Rows[0]["course"].ToString();
                         tb_sem.Text = dt.Rows[0]["semester"].ToString();
 
-                        // Calculate Grand Total
+                        
                         decimal grandTotal = 0;
 
                         foreach (DataRow row in dt.Rows)
@@ -147,7 +146,7 @@ namespace ER_ProcessingSystem
 
                         tb_total.Text = grandTotal.ToString();
 
-                        // Assign Final Grade
+                        
                         string finalGrade = "";
 
                         if (grandTotal >= 300)
@@ -162,9 +161,9 @@ namespace ER_ProcessingSystem
                         tb_fgrd.Text = finalGrade;
 
                         double sgpa = CalculateSGPA(dt);
-                        tb_sgpa.Text = sgpa.ToString("0.00"); // show SGPA with 2 decimals
+                        tb_sgpa.Text = sgpa.ToString("0.00"); 
 
-                        //tb_sgpa.Text = "" + CalculateSGPA(dgvResultGrid);
+                       
                     }
                     else
                     {
@@ -217,43 +216,6 @@ namespace ER_ProcessingSystem
             return (double)totalGradePoints / totalCredits;
         }
 
-        private double CalculateSGPA(DataGridView dgv)
-        {
-            // Define grade-to-point mapping
-            Dictionary<string, int> gradePoints = new Dictionary<string, int>()
-    {
-        { "A", 9 },
-        { "B", 8 },
-        { "C", 7 },
-        { "D", 6 },
-        { "E", 5 },
-        { "F", 0 }
-    };
-
-            int totalCredits = 0;
-            int totalGradePoints = 0;
-
-            // Assume each subject has 4 credits (you can change this)
-            int subjectCredits = 4;
-
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                if (row.Cells["Grade"].Value != null)
-                {
-                    string grade = row.Cells["Grade"].Value.ToString().Trim().ToUpper();
-
-                    if (gradePoints.ContainsKey(grade))
-                    {
-                        int gp = gradePoints[grade];
-                        totalGradePoints += gp * subjectCredits;
-                        totalCredits += subjectCredits;
-                    }
-                }
-            }
-
-            if (totalCredits == 0) return 0.0;
-
-            return (double)totalGradePoints / totalCredits;
-        }
+       
     }
 }
