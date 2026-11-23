@@ -114,22 +114,55 @@ namespace ER_ProcessingSystem
         }
 
 
+
         private void LoadSubjects()
         {
-            using (OracleConnection con = new OracleConnection(General.connectionString))
+            using (OracleConnection con =
+                new OracleConnection(General.connectionString))
             {
                 con.Open();
 
-                string query = "SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT";
-                OracleDataAdapter da = new OracleDataAdapter(query, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                string query = @"
+            SELECT SUBJECT_ID, SUBJECT_NAME
+            FROM SUBJECT
+            WHERE (:role = 'ADMIN'
+                   OR TEACHER_ID = :teacherId)
+            ORDER BY SUBJECT_NAME";
 
-                cmb_sub.DataSource = dt;
-                cmb_sub.DisplayMember = "SUBJECT_NAME";
-                cmb_sub.ValueMember = "SUBJECT_ID";
+                using (OracleCommand cmd =
+                    new OracleCommand(query, con))
+                {
+                    cmd.Parameters.Add(":role", General.role.ToUpper());
+                    cmd.Parameters.Add(":teacherId", General.teacherId);
+
+                    OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cmb_sub.DataSource = dt;
+                    cmb_sub.DisplayMember = "SUBJECT_NAME";
+                    cmb_sub.ValueMember = "SUBJECT_ID";
+                }
             }
+
+            //using (OracleConnection con = new OracleConnection(General.connectionString))
+            //{
+            //    con.Open();
+
+            //    string query = "SELECT SUBJECT_ID, SUBJECT_NAME FROM SUBJECT";
+            //    OracleDataAdapter da = new OracleDataAdapter(query, con);
+            //    DataTable dt = new DataTable();
+            //    da.Fill(dt);
+
+            //    cmb_sub.DataSource = dt;
+            //    cmb_sub.DisplayMember = "SUBJECT_NAME";
+            //    cmb_sub.ValueMember = "SUBJECT_ID";
+            //}
         }
+
+        
+        
         private void marksEntry_Load(object sender, EventArgs e)
         {
             dgvMarksEntry.AutoGenerateColumns = false;

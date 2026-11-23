@@ -343,7 +343,6 @@
             Name = "ViewResultForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Result Sheet";
-            WindowState = FormWindowState.Maximized;
             Load += ViewResultForm_Load;
             pnlReportCard.ResumeLayout(false);
             pnlReportCard.PerformLayout();
